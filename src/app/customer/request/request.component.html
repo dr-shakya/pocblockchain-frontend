@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <h2><strong>REQUEST BALANCE UPDATE</strong></h2>
+  
+  <form [formGroup]="requestForm" novalidate (ngSubmit)="requestBalanceUpdate()">
+    <div class="form-group" >
+      <label>Customer Name</label>
+      <input formControlName="customerName" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Bank Name</label>
+      <input formControlName="bankName" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Message</label>
+      <input formControlName="message" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Balance</label>
+      <input formControlName="balance" type="number" class="form-control">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Make Request</button>
+    <br>
+
+    <div *ngIf="transactionReceipt">
+      {{transactionReceipt | json}}
+    </div>    
+  
+  </form>
+
+</div>

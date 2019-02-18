@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <h2><strong>ADD CUSTOMER</strong></h2>
+  
+  <form [formGroup]="customerForm" novalidate (ngSubmit)="setCustomer()">
+    <div class="form-group" >
+      <label>Bank Name</label>
+      <input formControlName="bankName" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Customer Name</label>
+      <input formControlName="customerName" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Account Password</label>
+      <input formControlName="accountPassword" type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Balance</label>
+      <input formControlName="balance" type="number" class="form-control">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Add Customer</button>
+    <br>
+
+    <div *ngIf="transactionReceipt">
+      {{transactionReceipt | json}}
+    </div>    
+  
+  </form>
+
+</div>

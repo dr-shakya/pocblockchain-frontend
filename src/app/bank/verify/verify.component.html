@@ -1,0 +1,20 @@
+<div>
+  <h2><strong>VERIFY</strong></h2>
+
+  <form [formGroup]="verifyForm" novalidate (ngSubmit)="verifyStatement()">
+    <div class="form-group" >
+      <label>Bank Name</label>
+      <input formControlName="bankName" type="text" class="form-control">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Verify</button>
+
+  </form>
+
+  <!-- {{verifyForm.controls['bankName'].value | json}} -->
+
+  <div *ngIf="transactionReceipt">
+    {{transactionReceipt | json}}
+  </div>
+
+</div>

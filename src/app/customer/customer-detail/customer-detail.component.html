@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <h2><strong>CUSTOMER DETAILS</strong></h2>
+
+  <form [formGroup]="customerDetailForm" (ngSubmit)="getCustomer()">
+    <div class="form-group">
+      <label>Customer Name</label>
+      <input formControlName="customerName" type="text" class="form-control">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Get Customer Details</button>
+
+    <div *ngIf="customerInfo">
+      {{customerInfo | json}}
+    </div>
+
+  </form>
+
+  <br><br>
+
+  <h2><strong>CUSTOMER BALANCE</strong></h2>
+
+  <form [formGroup]="customerBalanceForm" (ngSubmit)="getBalance()">
+    <div class="form-group">
+      <label>Customer Name</label>
+      <input formControlName="customerName" type="text" class="form-control">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Get Balance</button>
+
+    <div *ngIf="balance">
+      <label>{{balance}}</label>
+    </div>
+
+  </form>
+
+  <br>
+  <a routerLink = "/customer/request" class="nav-link">Request Balance Update</a>
+
+</div>
