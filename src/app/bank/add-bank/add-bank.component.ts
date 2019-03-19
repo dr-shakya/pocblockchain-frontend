@@ -26,14 +26,14 @@ export class AddBankComponent implements OnInit {
     this.initForm();
   }
 
-  initForm(): void{
+  initForm(): void {
     this.bankForm = this.formBuilder.group({
       bankName: [null],
       accountPassword: [null]
     });
     this.bankDetailForm = this.formBuilder.group({
       bankName: [null]
-    })
+    });
   }
 
   setBank(): void {
